@@ -1,0 +1,65 @@
+
+.image-box {
+    display:none;
+    background-image: url(../../assets/login-hero.gif);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:100%;
+    width: 45%;
+    
+  }
+
+
+.lg-image-box {
+  position: absolute;
+  background-image: url(../../assets/login-hero.gif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  aspect-ratio: 1/1;
+  width: 50%;
+  top: 0;
+  left: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.login-box {
+  position: relative;
+
+  height: 70%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.91);
+
+  border-radius: 20px;
+}
+
+@media only screen and (min-width: 480px) {
+    .lg-image-box {
+        width:40%;
+    }
+
+}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 768px) {
+    .image-box {
+        display:block;
+    }
+
+  .lg-image-box {
+    display: none;
+  }
+  .login-box {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+   
+  .login-box {
+    width: 35%;
+  }
+}
