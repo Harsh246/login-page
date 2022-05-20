@@ -11,8 +11,12 @@ export class LoginService {
 
   togglePopup()
   {
+    console.log("inside toggle popup");
     this.showPopup = !this.showPopup;
   }
+
+
+ 
 
   constructor() { }
 }

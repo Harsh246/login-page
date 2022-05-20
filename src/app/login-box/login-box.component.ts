@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faUser, faEye ,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import {LoginService} from '../login.service';
 
 
 @Component({
@@ -29,7 +30,34 @@ export class LoginBoxComponent implements OnInit {
     this.textType = 'password';
   }
 
-  constructor() {}
+  trylogin(f:any)
+  {
+    this.isError =false;
+
+    if(f.invalid)
+    {
+      this.isError =true;
+      this.errorText = "Username/Password is required."
+      return;
+    }
+    console.log(f);
+
+    console.log(f.value)
+
+ 
+
+
+    this.isLoading=true;
+    setTimeout(()=>
+    {
+      f.reset();
+      this.popService.togglePopup();
+      this.isLoading=false;
+
+
+    },2000);
+  }
+  constructor(private popService: LoginService) {}
 
   ngOnInit(): void {}
 }

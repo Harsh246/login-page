@@ -27,6 +27,48 @@
 }
 
 
+@keyframes appear {
+
+    0%
+    {
+        top:100%;
+    }
+    100%
+    {
+        top:50%;
+    }
+    
+}
+
+
+
+
+.popup-modal
+{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    width:90%;
+    min-height:35vh;
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.659);
+    animation: appear 0.5s linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding:2rem;
+    letter-spacing: 2px;
+    
+
+    color:#2b3095;
+
+}
+
+
+
 @media only screen and (max-width: 480px) {
 
 }
@@ -35,6 +77,12 @@
  
 /* Medium screen devices (768px and above) */
 @media only screen and (min-width: 768px) {
+
+    
+.popup-modal
+{
+    width:40%;
+}
 
     .box-container
     {

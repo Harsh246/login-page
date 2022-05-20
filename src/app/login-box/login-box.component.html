@@ -1,50 +1,39 @@
-<form>
-
-    <div class="inline"><fa-icon [icon]="user"></fa-icon><input type="text"
-            placeholder="Username" />
-    </div>
-
-
-
-
-    <div class="inline">
-
-        
-        <fa-icon style="cursor:pointer" (click)="toggleEye()" [icon]="eyeurl"></fa-icon>
-        <input placeholder="Password"
-            [type]="closeEye?'password':'text'" />
-    </div>
-    <button type="button" *ngIf="isLoading; else log">
-        <img src="../../assets/4.gif">
-    </button>
-
-    <ng-template #log>
-        <button type="button">
-            Login
-        </button>
-
-    </ng-template>
-
-
-
-
-
-    <div *ngIf="isError">
-
-        <div class="error">
-            {{errorText}}
-        </div>
-    </div>
-
+<form #myform="ngForm" >
     
+  <div class="inline">
+    <fa-icon [icon]="user"></fa-icon
+    ><input required ngModel name="username" type="text" placeholder="Username" />
+  </div>
+        
+  <div class="inline">
+    <fa-icon
+      style="cursor: pointer"
+      (click)="toggleEye()"
+      [icon]="eyeurl"
+    ></fa-icon>
+    <input required ngModel name="password" placeholder="Password" [type]="closeEye ? 'password' : 'text'" />
+  </div>
 
-    <div class="inline">
-        <a>Register</a>
+  <!-- Structural directive for Button Logging in state-->
+  <button type="button" *ngIf="isLoading; else log" >
+    <img src="../../assets/4.gif" />
+  </button>
 
-        <a>Forgot password</a>
+  <ng-template #log>
+    <button type="submit" (click)="trylogin(myform)"  >Login</button>
+  </ng-template>
 
+  <!--Structural directive for Error Field  -->
+  <div *ngIf="isError">
+    <div class="error">
+      {{ errorText }}
     </div>
+  </div>
+  
 
+  <div class="inline">
+    <a (click)="myform.reset()">Reset</a>
 
-
+    <a>Forgot password</a>
+  </div>
 </form>

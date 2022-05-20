@@ -18,6 +18,7 @@ input {
   font-size: 21px;
   padding-left: 40px;
   padding-bottom: 3px;
+  letter-spacing: 0.1em;
 }
 
 .inline {
@@ -78,4 +79,9 @@ button:hover {
   font-weight: 400;
   margin: 0.5rem 0;
   height:2rem;
+}
+
+input.ng-invalid.ng-touched
+{
+  border-color:red !important;
 }

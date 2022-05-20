@@ -14,6 +14,16 @@ export class AppComponent {
 
   }
 
-  showpopup = this.firstInstance.showPopup;
+
+  //make sure to use setters and getters otherwise it will make a local instance of it.
+
+  // if you do something like showpop= this.firstInstance.showPopup; it will not update
+
+  get showpopup(): boolean {
+    return this.firstInstance.showPopup;
+}
+
+
+
 
 }
