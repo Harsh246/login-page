@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LoginService} from '../app/login.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'login-page';
+
+  constructor(private firstInstance: LoginService )
+  {
+
+  }
+
+  showpopup = this.firstInstance.showPopup;
+
 }

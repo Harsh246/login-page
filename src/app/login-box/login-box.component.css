@@ -1,0 +1,81 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 15px;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0;
+}
+
+input {
+  color: white;
+  width: 100%;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid gray;
+  font-size: 21px;
+  padding-left: 40px;
+  padding-bottom: 3px;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+
+.inline fa-icon {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  margin-left: 10px;
+}
+
+input:hover {
+  border-color: rgb(0, 140, 227);
+}
+
+*:focus {
+  outline: none;
+  border-color: rgb(0, 140, 227);
+}
+
+button {
+  width: 90%;
+  font-size: 20px;
+  text-transform: uppercase;
+  border: none;
+
+  margin: 2rem 0 1rem 0;
+
+  background-color: #3b0759;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+  outline-color: transparent;
+  outline-offset: 3px;
+  outline-style: solid;
+}
+
+button:hover {
+  outline-color: white;
+  outline-offset: 3px;
+  outline-style: solid;
+}
+
+.error {
+  color: red;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 400;
+  margin: 0.5rem 0;
+  height:2rem;
+}

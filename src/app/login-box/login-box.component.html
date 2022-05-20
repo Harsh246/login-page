@@ -1,1 +1,50 @@
-<p>login-box works!</p>
+<form>
+
+    <div class="inline"><fa-icon [icon]="user"></fa-icon><input type="text"
+            placeholder="Username" />
+    </div>
+
+
+
+
+    <div class="inline">
+
+        
+        <fa-icon style="cursor:pointer" (click)="toggleEye()" [icon]="eyeurl"></fa-icon>
+        <input placeholder="Password"
+            [type]="closeEye?'password':'text'" />
+    </div>
+    <button type="button" *ngIf="isLoading; else log">
+        <img src="../../assets/4.gif">
+    </button>
+
+    <ng-template #log>
+        <button type="button">
+            Login
+        </button>
+
+    </ng-template>
+
+
+
+
+
+    <div *ngIf="isError">
+
+        <div class="error">
+            {{errorText}}
+        </div>
+    </div>
+
+    
+
+    <div class="inline">
+        <a>Register</a>
+
+        <a>Forgot password</a>
+
+    </div>
+
+
+
+</form>

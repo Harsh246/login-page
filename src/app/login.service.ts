@@ -6,5 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
+
+  showPopup = false;
+
+  togglePopup()
+  {
+    this.showPopup = !this.showPopup;
+  }
+
   constructor() { }
 }
