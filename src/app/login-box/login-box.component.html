@@ -1,4 +1,4 @@
-<form #myform="ngForm" >
+<form #myform="ngForm" autocomplete="off">
     
   <div class="inline">
     <fa-icon [icon]="user"></fa-icon
@@ -16,11 +16,11 @@
 
   <!-- Structural directive for Button Logging in state-->
   <button type="button" *ngIf="isLoading; else log" >
-    <img src="../../assets/4.gif" />
+    <img src="../../assets/spin.gif" alt="spin" />
   </button>
 
   <ng-template #log>
-    <button type="submit" (click)="trylogin(myform)"  >Login</button>
+    <button type="button" (click)="trylogin(myform)"  [disabled]="myform.invalid" >Login</button>
   </ng-template>
 
   <!--Structural directive for Error Field  -->

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faUser, faEye ,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import {LoginService} from '../login.service';
-
+import { faUser, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login-box',
@@ -12,8 +11,14 @@ export class LoginBoxComponent implements OnInit {
   isError = false;
   errorText = 'Username/Password is not Correct';
   isLoading = false;
-  user= faUser;
-
+  user = faUser;
+  response: {
+    loggedIn: boolean;
+    message: string;
+  } = {
+    loggedIn: false,
+    message: 'dff',
+  };
 
   closeEye = true;
 
@@ -30,32 +35,31 @@ export class LoginBoxComponent implements OnInit {
     this.textType = 'password';
   }
 
-  trylogin(f:any)
-  {
-    this.isError =false;
+  async trylogin(f: any) {
+    this.isError = false;
 
-    if(f.invalid)
-    {
-      this.isError =true;
-      this.errorText = "Username/Password is required."
+    if (f.invalid) {
+      this.isError = true;
+      this.errorText = 'Username/Password is required.';
       return;
     }
-    console.log(f);
+    //    console.log(f);
+    this.isLoading = true;
+    console.log(f.value);
 
-    console.log(f.value)
-
- 
-
-
-    this.isLoading=true;
-    setTimeout(()=>
-    {
-      f.reset();
-      this.popService.togglePopup();
-      this.isLoading=false;
-
-
-    },2000);
+    const result = (await this.popService.verifyData(f.value)).subscribe(
+      (res: any) => {
+        setTimeout(() => {
+          if (res.loggedIn) {
+            this.popService.togglePopup();
+          } else {
+            this.isError = true;
+            this.errorText = res.message;
+          }
+          this.isLoading = false;
+        }, 1000);
+      }
+    );
   }
   constructor(private popService: LoginService) {}
 

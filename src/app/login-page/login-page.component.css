@@ -10,6 +10,7 @@
 
 .lg-image-box {
   position: absolute;
+  max-width: 180px;
   background-image: url(../../assets/login-hero.gif);
   background-position: center;
   background-size: cover;
@@ -43,7 +44,7 @@
 .login-container {
   width: 100%;
   height: 85%;
-  
+
   border-radius: 20px;
   padding: 2rem 1rem;
   display: flex;
@@ -64,7 +65,7 @@
 
 @media only screen and (min-width: 1024px) {
   .login-box {
-    width: 35%;
+    width: 400px;
     min-height: 20%;
   }
   .image-box {

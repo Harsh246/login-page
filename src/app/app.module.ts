@@ -4,27 +4,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginBoxComponent } from './login-box/login-box.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
- 
-import {LoginService} from './login.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { LoginService } from './login.service';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     LoginBoxComponent,
-    PopUpComponent
+    PopUpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [LoginService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -30,11 +30,10 @@ input {
   position: relative;
 }
 
-
 .inline fa-icon {
   position: absolute;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   margin-left: 10px;
 }
 
@@ -52,8 +51,7 @@ button {
   font-size: 20px;
   text-transform: uppercase;
   border: none;
-
-  margin: 2rem 0 1rem 0;
+  margin: 1.5rem 0 1rem 0;
 
   background-color: #3b0759;
   color: white;
@@ -68,20 +66,24 @@ button {
 
 button:hover {
   outline-color: white;
-  outline-offset: 3px;
-  outline-style: solid;
 }
 
 .error {
   color: red;
-  font-size: 18px;
+  font-size: 17px;
   text-align: center;
   font-weight: 400;
-  margin: 0.5rem 0;
-  height:2rem;
+  margin: 1rem 0;
+  height: auto;
 }
 
-input.ng-invalid.ng-touched
-{
-  border-color:red !important;
+input.ng-invalid.ng-touched {
+  border-color: red !important;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+button:disabled:hover {
+  outline-color: transparent;
 }
